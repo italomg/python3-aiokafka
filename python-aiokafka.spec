@@ -6,7 +6,7 @@ Version:    0.7.2
 Release:    1%{?dist}
 Summary:    Asyncio client for Kafka
 License:    ASL 2.0
-Source0:    https://github.com/%{owner}/%{sname}/archive/refs/tags/v%{version}.tar.gz
+Source0:    https://github.com/%{owner}/%{sname}/archive/v%{version}/%{sname}-%{version}.tar.gz
 URL:        https://github.com/%{owner}/%{sname}
 BuildArch:  noarch
 
