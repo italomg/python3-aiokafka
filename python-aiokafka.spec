@@ -3,7 +3,7 @@
 
 Name:       python-%{sname}
 Version:    0.7.2
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Asyncio client for Kafka
 License:    ASL 2.0
 Source0:    https://github.com/%{owner}/%{sname}/archive/v%{version}/%{sname}-%{version}.tar.gz
