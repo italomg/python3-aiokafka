@@ -3,7 +3,7 @@
 
 Name:       python-%{sname}
 Version:    0.7.2
-Release:    2%{?dist}
+Release:    3%{?dist}
 Summary:    Asyncio client for Kafka
 License:    ASL 2.0
 Source0:    https://github.com/%{owner}/%{sname}/archive/v%{version}/%{sname}-%{version}.tar.gz
@@ -29,6 +29,7 @@ Summary:    %{summary}
 %pyproject_buildrequires -r
 
 %build
+rm aiokafka/record/_crecords/crc32c.[ch]
 %pyproject_wheel
 
 %install
@@ -41,8 +42,6 @@ Summary:    %{summary}
 AIOKAFKA_NO_EXTENSIONS=1 py.test -s -p no:warnings -k 'not test_read_write_serde_v0_v1_with_compression and not test_create_ssl_context' tests
 
 %files -n python3-%{sname} -f %{pyproject_files}
-%exclude %{buildroot}%{python3_sitelib}/aiokafka/record/_crecords/crc32c.c
-%exclude %{buildroot}%{python3_sitelib}/aiokafka/record/_crecords/crc32c.h
 %license LICENSE
 %doc README.rst
 
